@@ -3,6 +3,7 @@ package nilex_test
 import (
 	"reflect"
 	"testing"
+	"time"
 
 	"github.com/otakakot/nilex"
 )
@@ -334,5 +335,23 @@ func TestNilZeroArray(t *testing.T) {
 
 	if !reflect.DeepEqual(got, [2]int{1, 2}) {
 		t.Errorf("NilZero() = %v, want %v", got, [2]int{1, 2})
+	}
+}
+
+func TestNilZeroTime(t *testing.T) {
+	v := new(time.Time)
+
+	got := nilex.NilZero(v)
+
+	if !reflect.DeepEqual(got, time.Time{}) {
+		t.Errorf("NilZero() = %v, want %v", got, time.Time{})
+	}
+
+	*v = time.Now()
+
+	got = nilex.NilZero(v)
+
+	if !reflect.DeepEqual(got, *v) {
+		t.Errorf("NilZero() = %v, want %v", got, *v)
 	}
 }

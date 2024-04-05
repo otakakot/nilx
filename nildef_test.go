@@ -3,6 +3,7 @@ package nilex_test
 import (
 	"reflect"
 	"testing"
+	"time"
 
 	"github.com/otakakot/nilex"
 )
@@ -334,5 +335,25 @@ func TestNilDefArray(t *testing.T) {
 
 	if !reflect.DeepEqual(got, [2]int{1, 2}) {
 		t.Errorf("NilDef() = %v, want %v", got, [2]int{1, 2})
+	}
+}
+
+func TestNilDefTime(t *testing.T) {
+	now := time.Now()
+
+	got := nilex.NilDef(nil, now)
+
+	if !reflect.DeepEqual(got, now) {
+		t.Errorf("NilDef() = %v, want %v", got, now)
+	}
+
+	v := new(time.Time)
+
+	*v = time.Now()
+
+	got = nilex.NilDef(v, now)
+
+	if !reflect.DeepEqual(got, *v) {
+		t.Errorf("NilDef() = %v, want %v", got, *v)
 	}
 }
