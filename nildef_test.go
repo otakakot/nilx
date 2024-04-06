@@ -1,15 +1,15 @@
-package nilex_test
+package nilx_test
 
 import (
 	"reflect"
 	"testing"
 	"time"
 
-	"github.com/otakakot/nilex"
+	"github.com/otakakot/nilx"
 )
 
 func TestNilDefInt(t *testing.T) {
-	got := nilex.NilDef(nil, 1)
+	got := nilx.NilDef(nil, 1)
 
 	if !reflect.DeepEqual(got, 1) {
 		t.Errorf("NilDef() = %v, want %v", got, 1)
@@ -19,7 +19,7 @@ func TestNilDefInt(t *testing.T) {
 
 	*v = 5
 
-	got = nilex.NilDef(v, 1)
+	got = nilx.NilDef(v, 1)
 
 	if !reflect.DeepEqual(got, 5) {
 		t.Errorf("NilDef() = %v, want %v", got, 5)
@@ -27,7 +27,7 @@ func TestNilDefInt(t *testing.T) {
 }
 
 func TestNilDefInt16(t *testing.T) {
-	got := nilex.NilDef(nil, int16(1))
+	got := nilx.NilDef(nil, int16(1))
 
 	if !reflect.DeepEqual(got, int16(1)) {
 		t.Errorf("NilDef() = %v, want %v", got, int16(0))
@@ -37,7 +37,7 @@ func TestNilDefInt16(t *testing.T) {
 
 	*v = 5
 
-	got = nilex.NilDef(v, 1)
+	got = nilx.NilDef(v, 1)
 
 	if !reflect.DeepEqual(got, int16(5)) {
 		t.Errorf("NilDef() = %v, want %v", got, int16(5))
@@ -45,7 +45,7 @@ func TestNilDefInt16(t *testing.T) {
 }
 
 func TestNilDefInt32(t *testing.T) {
-	got := nilex.NilDef(nil, int32(1))
+	got := nilx.NilDef(nil, int32(1))
 
 	if !reflect.DeepEqual(got, int32(1)) {
 		t.Errorf("NilDef() = %v, want %v", got, int32(1))
@@ -55,7 +55,7 @@ func TestNilDefInt32(t *testing.T) {
 
 	*v = 5
 
-	got = nilex.NilDef(v, 1)
+	got = nilx.NilDef(v, 1)
 
 	if !reflect.DeepEqual(got, int32(5)) {
 		t.Errorf("NilDef() = %v, want %v", got, int32(5))
@@ -63,7 +63,7 @@ func TestNilDefInt32(t *testing.T) {
 }
 
 func TestNilDefInt64(t *testing.T) {
-	got := nilex.NilDef(nil, int64(1))
+	got := nilx.NilDef(nil, int64(1))
 
 	if !reflect.DeepEqual(got, int64(1)) {
 		t.Errorf("NilDef() = %v, want %v", got, int64(1))
@@ -73,7 +73,7 @@ func TestNilDefInt64(t *testing.T) {
 
 	*v = 5
 
-	got = nilex.NilDef(v, 1)
+	got = nilx.NilDef(v, 1)
 
 	if !reflect.DeepEqual(got, int64(5)) {
 		t.Errorf("NilDef() = %v, want %v", got, int64(5))
@@ -81,7 +81,7 @@ func TestNilDefInt64(t *testing.T) {
 }
 
 func TestNilDefUint(t *testing.T) {
-	got := nilex.NilDef(nil, uint(1))
+	got := nilx.NilDef(nil, uint(1))
 
 	if !reflect.DeepEqual(got, uint(1)) {
 		t.Errorf("NilDef() = %v, want %v", got, uint(1))
@@ -91,7 +91,7 @@ func TestNilDefUint(t *testing.T) {
 
 	*v = 5
 
-	got = nilex.NilDef(v, 1)
+	got = nilx.NilDef(v, 1)
 
 	if !reflect.DeepEqual(got, uint(5)) {
 		t.Errorf("NilDef() = %v, want %v", got, uint(5))
@@ -99,7 +99,7 @@ func TestNilDefUint(t *testing.T) {
 }
 
 func TestNilDefUint16(t *testing.T) {
-	got := nilex.NilDef(nil, uint16(1))
+	got := nilx.NilDef(nil, uint16(1))
 
 	if !reflect.DeepEqual(got, uint16(1)) {
 		t.Errorf("NilDef() = %v, want %v", got, uint16(1))
@@ -109,7 +109,7 @@ func TestNilDefUint16(t *testing.T) {
 
 	*v = 5
 
-	got = nilex.NilDef(v, 1)
+	got = nilx.NilDef(v, 1)
 
 	if !reflect.DeepEqual(got, uint16(5)) {
 		t.Errorf("NilDef() = %v, want %v", got, uint16(5))
@@ -117,7 +117,7 @@ func TestNilDefUint16(t *testing.T) {
 }
 
 func TestNilDefUint32(t *testing.T) {
-	got := nilex.NilDef(nil, uint32(1))
+	got := nilx.NilDef(nil, uint32(1))
 
 	if !reflect.DeepEqual(got, uint32(1)) {
 		t.Errorf("NilDef() = %v, want %v", got, uint32(1))
@@ -127,7 +127,7 @@ func TestNilDefUint32(t *testing.T) {
 
 	*v = 5
 
-	got = nilex.NilDef(v, 1)
+	got = nilx.NilDef(v, 1)
 
 	if !reflect.DeepEqual(got, uint32(5)) {
 		t.Errorf("NilDef() = %v, want %v", got, uint32(5))
@@ -135,7 +135,7 @@ func TestNilDefUint32(t *testing.T) {
 }
 
 func TestNilDefUint64(t *testing.T) {
-	got := nilex.NilDef(nil, uint64(1))
+	got := nilx.NilDef(nil, uint64(1))
 
 	if !reflect.DeepEqual(got, uint64(1)) {
 		t.Errorf("NilDef() = %v, want %v", got, uint64(1))
@@ -145,7 +145,7 @@ func TestNilDefUint64(t *testing.T) {
 
 	*v = 5
 
-	got = nilex.NilDef(v, 1)
+	got = nilx.NilDef(v, 1)
 
 	if !reflect.DeepEqual(got, uint64(5)) {
 		t.Errorf("NilDef() = %v, want %v", got, uint64(5))
@@ -153,7 +153,7 @@ func TestNilDefUint64(t *testing.T) {
 }
 
 func TestNilDefFloat32(t *testing.T) {
-	got := nilex.NilDef(nil, float32(1))
+	got := nilx.NilDef(nil, float32(1))
 
 	if !reflect.DeepEqual(got, float32(1)) {
 		t.Errorf("NilDef() = %v, want %v", got, float32(1))
@@ -163,7 +163,7 @@ func TestNilDefFloat32(t *testing.T) {
 
 	*v = 5.5
 
-	got = nilex.NilDef(v, 1)
+	got = nilx.NilDef(v, 1)
 
 	if !reflect.DeepEqual(got, float32(5.5)) {
 		t.Errorf("NilDef() = %v, want %v", got, float32(5.5))
@@ -171,7 +171,7 @@ func TestNilDefFloat32(t *testing.T) {
 }
 
 func TestNilDefFloat64(t *testing.T) {
-	got := nilex.NilDef(nil, float64(1))
+	got := nilx.NilDef(nil, float64(1))
 
 	if !reflect.DeepEqual(got, float64(1)) {
 		t.Errorf("NilDef() = %v, want %v", got, float64(1))
@@ -181,7 +181,7 @@ func TestNilDefFloat64(t *testing.T) {
 
 	*v = 5.5
 
-	got = nilex.NilDef(v, 1)
+	got = nilx.NilDef(v, 1)
 
 	if !reflect.DeepEqual(got, float64(5.5)) {
 		t.Errorf("NilDef() = %v, want %v", got, float64(5.5))
@@ -189,7 +189,7 @@ func TestNilDefFloat64(t *testing.T) {
 }
 
 func TestNilDefString(t *testing.T) {
-	got := nilex.NilDef(nil, "def")
+	got := nilx.NilDef(nil, "def")
 
 	if !reflect.DeepEqual(got, "def") {
 		t.Errorf("NilDef() = %v, want %v", got, "def")
@@ -199,7 +199,7 @@ func TestNilDefString(t *testing.T) {
 
 	*v = "test"
 
-	got = nilex.NilDef(v, "def")
+	got = nilx.NilDef(v, "def")
 
 	if !reflect.DeepEqual(got, "test") {
 		t.Errorf("NilDef() = %v, want %v", got, "test")
@@ -207,7 +207,7 @@ func TestNilDefString(t *testing.T) {
 }
 
 func TestNilDefBool(t *testing.T) {
-	got := nilex.NilDef(nil, true)
+	got := nilx.NilDef(nil, true)
 
 	if !reflect.DeepEqual(got, true) {
 		t.Errorf("NilDef() = %v, want %v", got, true)
@@ -217,7 +217,7 @@ func TestNilDefBool(t *testing.T) {
 
 	*v = true
 
-	got = nilex.NilDef(v, false)
+	got = nilx.NilDef(v, false)
 
 	if !reflect.DeepEqual(got, true) {
 		t.Errorf("NilDef() = %v, want %v", got, true)
@@ -225,7 +225,7 @@ func TestNilDefBool(t *testing.T) {
 }
 
 func TestNilDefComplex64(t *testing.T) {
-	got := nilex.NilDef(nil, complex64(1))
+	got := nilx.NilDef(nil, complex64(1))
 
 	if !reflect.DeepEqual(got, complex64(1)) {
 		t.Errorf("NilDef() = %v, want %v", got, complex64(1))
@@ -235,7 +235,7 @@ func TestNilDefComplex64(t *testing.T) {
 
 	*v = 5 + 5i
 
-	got = nilex.NilDef(v, complex64(1))
+	got = nilx.NilDef(v, complex64(1))
 
 	if !reflect.DeepEqual(got, complex64(5+5i)) {
 		t.Errorf("NilDef() = %v, want %v", got, complex64(5+5i))
@@ -243,7 +243,7 @@ func TestNilDefComplex64(t *testing.T) {
 }
 
 func TestNilDefComplex128(t *testing.T) {
-	got := nilex.NilDef(nil, complex128(1))
+	got := nilx.NilDef(nil, complex128(1))
 
 	if !reflect.DeepEqual(got, complex128(1)) {
 		t.Errorf("NilDef() = %v, want %v", got, complex128(1))
@@ -253,7 +253,7 @@ func TestNilDefComplex128(t *testing.T) {
 
 	*v = 5 + 5i
 
-	got = nilex.NilDef(v, complex128(1))
+	got = nilx.NilDef(v, complex128(1))
 
 	if !reflect.DeepEqual(got, complex128(5+5i)) {
 		t.Errorf("NilDef() = %v, want %v", got, complex128(5+5i))
@@ -261,7 +261,7 @@ func TestNilDefComplex128(t *testing.T) {
 }
 
 func TestNilDefByte(t *testing.T) {
-	got := nilex.NilDef(nil, byte(1))
+	got := nilx.NilDef(nil, byte(1))
 
 	if !reflect.DeepEqual(got, byte(1)) {
 		t.Errorf("NilDef() = %v, want %v", got, byte(1))
@@ -271,7 +271,7 @@ func TestNilDefByte(t *testing.T) {
 
 	*v = byte('a')
 
-	got = nilex.NilDef(v, byte(1))
+	got = nilx.NilDef(v, byte(1))
 
 	if !reflect.DeepEqual(got, byte('a')) {
 		t.Errorf("NilDef() = %v, want %v", got, byte('a'))
@@ -279,7 +279,7 @@ func TestNilDefByte(t *testing.T) {
 }
 
 func TestNilDefRune(t *testing.T) {
-	got := nilex.NilDef(nil, rune(1))
+	got := nilx.NilDef(nil, rune(1))
 
 	if !reflect.DeepEqual(got, rune(1)) {
 		t.Errorf("NilDef() = %v, want %v", got, rune(1))
@@ -289,7 +289,7 @@ func TestNilDefRune(t *testing.T) {
 
 	*v = 'a'
 
-	got = nilex.NilDef(v, rune(1))
+	got = nilx.NilDef(v, rune(1))
 
 	if !reflect.DeepEqual(got, 'a') {
 		t.Errorf("NilDef() = %v, want %v", got, rune('a'))
@@ -301,7 +301,7 @@ func TestNilDefStruct(t *testing.T) {
 		Field string
 	}
 
-	got := nilex.NilDef(nil, TestStruct{Field: "def"})
+	got := nilx.NilDef(nil, TestStruct{Field: "def"})
 
 	if !reflect.DeepEqual(got, TestStruct{Field: "def"}) {
 		t.Errorf("NilDef() = %v, want %v", got, TestStruct{Field: "def"})
@@ -313,7 +313,7 @@ func TestNilDefStruct(t *testing.T) {
 		Field: "test",
 	}
 
-	got = nilex.NilDef(v, TestStruct{Field: "def"})
+	got = nilx.NilDef(v, TestStruct{Field: "def"})
 
 	if !reflect.DeepEqual(got, TestStruct{Field: "test"}) {
 		t.Errorf("NilDef() = %v, want %v", got, TestStruct{Field: "test"})
@@ -321,7 +321,7 @@ func TestNilDefStruct(t *testing.T) {
 }
 
 func TestNilDefArray(t *testing.T) {
-	got := nilex.NilDef(nil, [2]int{1, 1})
+	got := nilx.NilDef(nil, [2]int{1, 1})
 
 	if !reflect.DeepEqual(got, [2]int{1, 1}) {
 		t.Errorf("NilDef() = %v, want %v", got, [2]int{1, 1})
@@ -331,7 +331,7 @@ func TestNilDefArray(t *testing.T) {
 
 	*v = [2]int{1, 2}
 
-	got = nilex.NilDef(v, [2]int{1, 1})
+	got = nilx.NilDef(v, [2]int{1, 1})
 
 	if !reflect.DeepEqual(got, [2]int{1, 2}) {
 		t.Errorf("NilDef() = %v, want %v", got, [2]int{1, 2})
@@ -341,7 +341,7 @@ func TestNilDefArray(t *testing.T) {
 func TestNilDefTime(t *testing.T) {
 	now := time.Now()
 
-	got := nilex.NilDef(nil, now)
+	got := nilx.NilDef(nil, now)
 
 	if !reflect.DeepEqual(got, now) {
 		t.Errorf("NilDef() = %v, want %v", got, now)
@@ -351,7 +351,7 @@ func TestNilDefTime(t *testing.T) {
 
 	*v = time.Now()
 
-	got = nilex.NilDef(v, now)
+	got = nilx.NilDef(v, now)
 
 	if !reflect.DeepEqual(got, *v) {
 		t.Errorf("NilDef() = %v, want %v", got, *v)
