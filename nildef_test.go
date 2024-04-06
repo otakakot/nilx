@@ -9,6 +9,8 @@ import (
 )
 
 func TestNilDefInt(t *testing.T) {
+	t.Parallel()
+
 	got := nilx.NilDef(nil, 1)
 
 	if !reflect.DeepEqual(got, 1) {
@@ -27,6 +29,8 @@ func TestNilDefInt(t *testing.T) {
 }
 
 func TestNilDefInt16(t *testing.T) {
+	t.Parallel()
+
 	got := nilx.NilDef(nil, int16(1))
 
 	if !reflect.DeepEqual(got, int16(1)) {
@@ -45,6 +49,8 @@ func TestNilDefInt16(t *testing.T) {
 }
 
 func TestNilDefInt32(t *testing.T) {
+	t.Parallel()
+
 	got := nilx.NilDef(nil, int32(1))
 
 	if !reflect.DeepEqual(got, int32(1)) {
@@ -63,6 +69,8 @@ func TestNilDefInt32(t *testing.T) {
 }
 
 func TestNilDefInt64(t *testing.T) {
+	t.Parallel()
+
 	got := nilx.NilDef(nil, int64(1))
 
 	if !reflect.DeepEqual(got, int64(1)) {
@@ -81,6 +89,8 @@ func TestNilDefInt64(t *testing.T) {
 }
 
 func TestNilDefUint(t *testing.T) {
+	t.Parallel()
+
 	got := nilx.NilDef(nil, uint(1))
 
 	if !reflect.DeepEqual(got, uint(1)) {
@@ -99,6 +109,8 @@ func TestNilDefUint(t *testing.T) {
 }
 
 func TestNilDefUint16(t *testing.T) {
+	t.Parallel()
+
 	got := nilx.NilDef(nil, uint16(1))
 
 	if !reflect.DeepEqual(got, uint16(1)) {
@@ -117,6 +129,8 @@ func TestNilDefUint16(t *testing.T) {
 }
 
 func TestNilDefUint32(t *testing.T) {
+	t.Parallel()
+
 	got := nilx.NilDef(nil, uint32(1))
 
 	if !reflect.DeepEqual(got, uint32(1)) {
@@ -135,6 +149,8 @@ func TestNilDefUint32(t *testing.T) {
 }
 
 func TestNilDefUint64(t *testing.T) {
+	t.Parallel()
+
 	got := nilx.NilDef(nil, uint64(1))
 
 	if !reflect.DeepEqual(got, uint64(1)) {
@@ -153,6 +169,8 @@ func TestNilDefUint64(t *testing.T) {
 }
 
 func TestNilDefFloat32(t *testing.T) {
+	t.Parallel()
+
 	got := nilx.NilDef(nil, float32(1))
 
 	if !reflect.DeepEqual(got, float32(1)) {
@@ -171,6 +189,8 @@ func TestNilDefFloat32(t *testing.T) {
 }
 
 func TestNilDefFloat64(t *testing.T) {
+	t.Parallel()
+
 	got := nilx.NilDef(nil, float64(1))
 
 	if !reflect.DeepEqual(got, float64(1)) {
@@ -189,6 +209,8 @@ func TestNilDefFloat64(t *testing.T) {
 }
 
 func TestNilDefString(t *testing.T) {
+	t.Parallel()
+
 	got := nilx.NilDef(nil, "def")
 
 	if !reflect.DeepEqual(got, "def") {
@@ -207,6 +229,8 @@ func TestNilDefString(t *testing.T) {
 }
 
 func TestNilDefBool(t *testing.T) {
+	t.Parallel()
+
 	got := nilx.NilDef(nil, true)
 
 	if !reflect.DeepEqual(got, true) {
@@ -225,6 +249,8 @@ func TestNilDefBool(t *testing.T) {
 }
 
 func TestNilDefComplex64(t *testing.T) {
+	t.Parallel()
+
 	got := nilx.NilDef(nil, complex64(1))
 
 	if !reflect.DeepEqual(got, complex64(1)) {
@@ -243,6 +269,8 @@ func TestNilDefComplex64(t *testing.T) {
 }
 
 func TestNilDefComplex128(t *testing.T) {
+	t.Parallel()
+
 	got := nilx.NilDef(nil, complex128(1))
 
 	if !reflect.DeepEqual(got, complex128(1)) {
@@ -261,6 +289,8 @@ func TestNilDefComplex128(t *testing.T) {
 }
 
 func TestNilDefByte(t *testing.T) {
+	t.Parallel()
+
 	got := nilx.NilDef(nil, byte(1))
 
 	if !reflect.DeepEqual(got, byte(1)) {
@@ -279,6 +309,8 @@ func TestNilDefByte(t *testing.T) {
 }
 
 func TestNilDefRune(t *testing.T) {
+	t.Parallel()
+
 	got := nilx.NilDef(nil, rune(1))
 
 	if !reflect.DeepEqual(got, rune(1)) {
@@ -297,6 +329,8 @@ func TestNilDefRune(t *testing.T) {
 }
 
 func TestNilDefStruct(t *testing.T) {
+	t.Parallel()
+
 	type TestStruct struct {
 		Field string
 	}
@@ -321,6 +355,8 @@ func TestNilDefStruct(t *testing.T) {
 }
 
 func TestNilDefArray(t *testing.T) {
+	t.Parallel()
+
 	got := nilx.NilDef(nil, [2]int{1, 1})
 
 	if !reflect.DeepEqual(got, [2]int{1, 1}) {
@@ -339,6 +375,8 @@ func TestNilDefArray(t *testing.T) {
 }
 
 func TestNilDefTime(t *testing.T) {
+	t.Parallel()
+
 	now := time.Now()
 
 	got := nilx.NilDef(nil, now)

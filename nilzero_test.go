@@ -9,6 +9,8 @@ import (
 )
 
 func TestNilZeroInt(t *testing.T) {
+	t.Parallel()
+
 	v := new(int)
 
 	got := nilx.NilZero(v)
@@ -27,6 +29,8 @@ func TestNilZeroInt(t *testing.T) {
 }
 
 func TestNilZeroInt16(t *testing.T) {
+	t.Parallel()
+
 	v := new(int16)
 
 	got := nilx.NilZero(v)
@@ -45,6 +49,8 @@ func TestNilZeroInt16(t *testing.T) {
 }
 
 func TestNilZeroInt32(t *testing.T) {
+	t.Parallel()
+
 	v := new(int32)
 
 	got := nilx.NilZero(v)
@@ -63,6 +69,8 @@ func TestNilZeroInt32(t *testing.T) {
 }
 
 func TestNilZeroInt64(t *testing.T) {
+	t.Parallel()
+
 	v := new(int64)
 
 	got := nilx.NilZero(v)
@@ -81,6 +89,8 @@ func TestNilZeroInt64(t *testing.T) {
 }
 
 func TestNilZeroUint(t *testing.T) {
+	t.Parallel()
+
 	v := new(uint)
 
 	got := nilx.NilZero(v)
@@ -99,6 +109,8 @@ func TestNilZeroUint(t *testing.T) {
 }
 
 func TestNilZeroUint16(t *testing.T) {
+	t.Parallel()
+
 	v := new(uint16)
 
 	got := nilx.NilZero(v)
@@ -117,6 +129,8 @@ func TestNilZeroUint16(t *testing.T) {
 }
 
 func TestNilZeroUint32(t *testing.T) {
+	t.Parallel()
+
 	v := new(uint32)
 
 	got := nilx.NilZero(v)
@@ -135,6 +149,8 @@ func TestNilZeroUint32(t *testing.T) {
 }
 
 func TestNilZeroUint64(t *testing.T) {
+	t.Parallel()
+
 	v := new(uint64)
 
 	got := nilx.NilZero(v)
@@ -153,6 +169,8 @@ func TestNilZeroUint64(t *testing.T) {
 }
 
 func TestNilZeroFloat32(t *testing.T) {
+	t.Parallel()
+
 	v := new(float32)
 
 	got := nilx.NilZero(v)
@@ -171,6 +189,8 @@ func TestNilZeroFloat32(t *testing.T) {
 }
 
 func TestNilZeroFloat64(t *testing.T) {
+	t.Parallel()
+
 	v := new(float64)
 
 	got := nilx.NilZero(v)
@@ -189,6 +209,8 @@ func TestNilZeroFloat64(t *testing.T) {
 }
 
 func TestNilZeroString(t *testing.T) {
+	t.Parallel()
+
 	v := new(string)
 
 	got := nilx.NilZero(v)
@@ -207,6 +229,8 @@ func TestNilZeroString(t *testing.T) {
 }
 
 func TestNilZeroBool(t *testing.T) {
+	t.Parallel()
+
 	v := new(bool)
 
 	got := nilx.NilZero(v)
@@ -225,6 +249,8 @@ func TestNilZeroBool(t *testing.T) {
 }
 
 func TestNilZeroComplex64(t *testing.T) {
+	t.Parallel()
+
 	v := new(complex64)
 
 	got := nilx.NilZero(v)
@@ -243,6 +269,8 @@ func TestNilZeroComplex64(t *testing.T) {
 }
 
 func TestNilZeroComplex128(t *testing.T) {
+	t.Parallel()
+
 	v := new(complex128)
 
 	got := nilx.NilZero(v)
@@ -261,6 +289,8 @@ func TestNilZeroComplex128(t *testing.T) {
 }
 
 func TestNilZeroByte(t *testing.T) {
+	t.Parallel()
+
 	v := new(byte)
 
 	got := nilx.NilZero(v)
@@ -279,6 +309,8 @@ func TestNilZeroByte(t *testing.T) {
 }
 
 func TestNilZeroRune(t *testing.T) {
+	t.Parallel()
+
 	v := new(rune)
 
 	got := nilx.NilZero(v)
@@ -297,6 +329,8 @@ func TestNilZeroRune(t *testing.T) {
 }
 
 func TestNilZeroStruct(t *testing.T) {
+	t.Parallel()
+
 	type TestStruct struct {
 		Field string
 	}
@@ -321,6 +355,8 @@ func TestNilZeroStruct(t *testing.T) {
 }
 
 func TestNilZeroArray(t *testing.T) {
+	t.Parallel()
+
 	v := new([2]int)
 
 	got := nilx.NilZero(v)
@@ -339,6 +375,8 @@ func TestNilZeroArray(t *testing.T) {
 }
 
 func TestNilZeroTime(t *testing.T) {
+	t.Parallel()
+
 	v := new(time.Time)
 
 	got := nilx.NilZero(v)
