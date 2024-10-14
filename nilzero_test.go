@@ -17,9 +17,9 @@ func TestNilZeroInt(t *testing.T) {
 		t.Errorf("NilZero() = %v, want %v", got, 0)
 	}
 
-	v := 5
+	val := 5
 
-	got = nilx.NilZero(&v)
+	got = nilx.NilZero(&val)
 
 	if !reflect.DeepEqual(got, 5) {
 		t.Errorf("NilZero() = %v, want %v", got, 5)
@@ -35,9 +35,9 @@ func TestNilZeroInt16(t *testing.T) {
 		t.Errorf("NilZero() = %v, want %v", got, int16(0))
 	}
 
-	v := int16(5)
+	val := int16(5)
 
-	got = nilx.NilZero(&v)
+	got = nilx.NilZero(&val)
 
 	if !reflect.DeepEqual(got, int16(5)) {
 		t.Errorf("NilZero() = %v, want %v", got, int16(5))
@@ -53,9 +53,9 @@ func TestNilZeroInt32(t *testing.T) {
 		t.Errorf("NilZero() = %v, want %v", got, int32(0))
 	}
 
-	v := int32(5)
+	val := int32(5)
 
-	got = nilx.NilZero(&v)
+	got = nilx.NilZero(&val)
 
 	if !reflect.DeepEqual(got, int32(5)) {
 		t.Errorf("NilZero() = %v, want %v", got, int32(5))
@@ -71,9 +71,9 @@ func TestNilZeroInt64(t *testing.T) {
 		t.Errorf("NilZero() = %v, want %v", got, int64(0))
 	}
 
-	v := int64(5)
+	val := int64(5)
 
-	got = nilx.NilZero(&v)
+	got = nilx.NilZero(&val)
 
 	if !reflect.DeepEqual(got, int64(5)) {
 		t.Errorf("NilZero() = %v, want %v", got, int64(5))
@@ -89,9 +89,9 @@ func TestNilZeroUint(t *testing.T) {
 		t.Errorf("NilZero() = %v, want %v", got, uint(0))
 	}
 
-	v := uint(5)
+	val := uint(5)
 
-	got = nilx.NilZero(&v)
+	got = nilx.NilZero(&val)
 
 	if !reflect.DeepEqual(got, uint(5)) {
 		t.Errorf("NilZero() = %v, want %v", got, uint(5))
@@ -125,9 +125,9 @@ func TestNilZeroUint32(t *testing.T) {
 		t.Errorf("NilZero() = %v, want %v", got, uint32(0))
 	}
 
-	v := uint32(5)
+	val := uint32(5)
 
-	got = nilx.NilZero(&v)
+	got = nilx.NilZero(&val)
 
 	if !reflect.DeepEqual(got, uint32(5)) {
 		t.Errorf("NilZero() = %v, want %v", got, uint32(5))
@@ -143,9 +143,9 @@ func TestNilZeroUint64(t *testing.T) {
 		t.Errorf("NilZero() = %v, want %v", got, uint64(0))
 	}
 
-	v := uint64(5)
+	val := uint64(5)
 
-	got = nilx.NilZero(&v)
+	got = nilx.NilZero(&val)
 
 	if !reflect.DeepEqual(got, uint64(5)) {
 		t.Errorf("NilZero() = %v, want %v", got, uint64(5))
@@ -161,9 +161,9 @@ func TestNilZeroFloat32(t *testing.T) {
 		t.Errorf("NilZero() = %v, want %v", got, float32(0))
 	}
 
-	v := float32(5.5)
+	val := float32(5.5)
 
-	got = nilx.NilZero(&v)
+	got = nilx.NilZero(&val)
 
 	if !reflect.DeepEqual(got, float32(5.5)) {
 		t.Errorf("NilZero() = %v, want %v", got, float32(5.5))
@@ -179,9 +179,9 @@ func TestNilZeroFloat64(t *testing.T) {
 		t.Errorf("NilZero() = %v, want %v", got, float64(0))
 	}
 
-	v := float64(5.5)
+	val := float64(5.5)
 
-	got = nilx.NilZero(&v)
+	got = nilx.NilZero(&val)
 
 	if !reflect.DeepEqual(got, float64(5.5)) {
 		t.Errorf("NilZero() = %v, want %v", got, float64(5.5))
@@ -197,9 +197,9 @@ func TestNilZeroString(t *testing.T) {
 		t.Errorf("NilZero() = %v, want %v", got, "")
 	}
 
-	v := "test"
+	val := "test"
 
-	got = nilx.NilZero(&v)
+	got = nilx.NilZero(&val)
 
 	if !reflect.DeepEqual(got, "test") {
 		t.Errorf("NilZero() = %v, want %v", got, "test")
@@ -215,12 +215,12 @@ func TestNilZeroBool(t *testing.T) {
 		t.Errorf("NilZero() = %v, want %v", got, false)
 	}
 
-	v := true
+	val := true
 
-	got = nilx.NilZero(&v)
+	got = nilx.NilZero(&val)
 
 	if !reflect.DeepEqual(got, true) {
-		t.Errorf("NilZero() = %v, want %v", got, true)
+		t.Errorf("NilZero() = %v, want %v", got, val)
 	}
 }
 
@@ -233,12 +233,12 @@ func TestNilZeroComplex64(t *testing.T) {
 		t.Errorf("NilZero() = %v, want %v", got, complex64(0))
 	}
 
-	v := complex64(5 + 5i)
+	val := complex64(5 + 5i)
 
-	got = nilx.NilZero(&v)
+	got = nilx.NilZero(&val)
 
 	if !reflect.DeepEqual(got, complex64(5+5i)) {
-		t.Errorf("NilZero() = %v, want %v", got, complex64(5+5i))
+		t.Errorf("NilZero() = %v, want %v", got, val)
 	}
 }
 
@@ -251,9 +251,9 @@ func TestNilZeroComplex128(t *testing.T) {
 		t.Errorf("NilZero() = %v, want %v", got, complex128(0))
 	}
 
-	v := 5 + 5i
+	val := 5 + 5i
 
-	got = nilx.NilZero(&v)
+	got = nilx.NilZero(&val)
 
 	if !reflect.DeepEqual(got, complex128(5+5i)) {
 		t.Errorf("NilZero() = %v, want %v", got, complex128(5+5i))
@@ -269,9 +269,9 @@ func TestNilZeroByte(t *testing.T) {
 		t.Errorf("NilZero() = %v, want %v", got, byte(0))
 	}
 
-	v := byte('a')
+	val := byte('a')
 
-	got = nilx.NilZero(&v)
+	got = nilx.NilZero(&val)
 
 	if !reflect.DeepEqual(got, byte('a')) {
 		t.Errorf("NilZero() = %v, want %v", got, byte('a'))
@@ -287,12 +287,12 @@ func TestNilZeroRune(t *testing.T) {
 		t.Errorf("NilZero() = %v, want %v", got, rune(0))
 	}
 
-	v := 'a'
+	val := 'a'
 
-	got = nilx.NilZero(&v)
+	got = nilx.NilZero(&val)
 
 	if !reflect.DeepEqual(got, 'a') {
-		t.Errorf("NilZero() = %v, want %v", got, rune('a'))
+		t.Errorf("NilZero() = %v, want %v", got, 'a')
 	}
 }
 
@@ -309,11 +309,11 @@ func TestNilZeroStruct(t *testing.T) {
 		t.Errorf("NilZero() = %v, want %v", got, TestStruct{})
 	}
 
-	v := TestStruct{
+	val := TestStruct{
 		Field: "test",
 	}
 
-	got = nilx.NilZero(&v)
+	got = nilx.NilZero(&val)
 
 	if !reflect.DeepEqual(got, TestStruct{Field: "test"}) {
 		t.Errorf("NilZero() = %v, want %v", got, TestStruct{Field: "test"})
@@ -329,9 +329,9 @@ func TestNilZeroArray(t *testing.T) {
 		t.Errorf("NilZero() = %v, want %v", got, [2]int{})
 	}
 
-	v := [2]int{1, 2}
+	val := [2]int{1, 2}
 
-	got = nilx.NilZero(&v)
+	got = nilx.NilZero(&val)
 
 	if !reflect.DeepEqual(got, [2]int{1, 2}) {
 		t.Errorf("NilZero() = %v, want %v", got, [2]int{1, 2})
@@ -347,11 +347,11 @@ func TestNilZeroTime(t *testing.T) {
 		t.Errorf("NilZero() = %v, want %v", got, time.Time{})
 	}
 
-	v := time.Now()
+	val := time.Now()
 
-	got = nilx.NilZero(&v)
+	got = nilx.NilZero(&val)
 
-	if !reflect.DeepEqual(got, v) {
-		t.Errorf("NilZero() = %v, want %v", got, v)
+	if !reflect.DeepEqual(got, val) {
+		t.Errorf("NilZero() = %v, want %v", got, val)
 	}
 }
