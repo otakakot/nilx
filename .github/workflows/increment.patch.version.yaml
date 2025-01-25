@@ -39,6 +39,7 @@ jobs:
           new_version="v${major}.${minor}.${patch}"
           echo "new_version=${new_version}" >> $GITHUB_OUTPUT
       - name: Push tag
+        if: contains(github.event.pull_request.labels.*.name, 'renovate')
         env:
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
         run: |
