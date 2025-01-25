@@ -3,7 +3,7 @@ run-name: ${{ github.ref_name }} by @${{ github.actor }} at ${{ github.workflow 
 on:
   push:
     tags:
-      - "v*"
+      - v*
 defaults:
   run:
     shell: bash
@@ -11,18 +11,21 @@ jobs:
   release:
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    permissions:
-      contents: write
     steps:
-      - uses: actions/checkout@v4
+      - name: Generate token
+        id: generate-token
+        uses: actions/create-github-app-token@v1
         with:
-          fetch-depth: 0
-      - uses: actions/setup-go@v5
+          app-id: ${{ secrets.BOT_GITHUB_APP_ID }}
+          private-key: ${{ secrets.BOT_GITHUB_APP_PRIVATE_KEY }}
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          go-version-file: go.mod
-          cache: true
-      - uses: goreleaser/goreleaser-action@v6
+          fetch-depth: 0 # Required to get tags
+          token: ${{ steps.generate-token.outputs.token }}
+      - name: Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          args: release --clean
+          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
+        run: |
+          version=$(git tag --sort=-creatordate | head -n 1)
+          gh release create ${version} --title ${version} --notes "${version}" --target main --latest
