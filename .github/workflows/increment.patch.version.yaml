@@ -1,0 +1,46 @@
+name: increment patch version
+run-name: ${{ github.ref_name }} by @${{ github.actor }} ${{ github.workflow }}
+on:
+  pull_request:
+    types:
+      - closed
+defaults:
+  run:
+    shell: bash
+jobs:
+  increment-patch-version:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Generate token
+        id: generate-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.BOT_GITHUB_APP_ID }}
+          private-key: ${{ secrets.BOT_GITHUB_APP_PRIVATE_KEY }}
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Required to get tags
+          token: ${{ steps.generate-token.outputs.token }}
+      - name: Increment patch version
+        id: increment-patch-version
+        if: contains(github.event.pull_request.labels.*.name, 'renovate')
+        env:
+          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
+        run: |
+          version=$(gh release list --limit 1 --json name | jq -r '.[0].name' | sed 's/v//')
+          IFS='.' read -ra version_array <<< ${version}
+          major=${version_array[0]}
+          minor=${version_array[1]}
+          patch=${version_array[2]}
+          patch=$((patch + 1))
+          new_version="v${major}.${minor}.${patch}"
+          echo "new_version=${new_version}" >> $GITHUB_OUTPUT
+      - name: Push tag
+        env:
+          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
+        run: |
+          git tag ${{ steps.increment-patch-version.outputs.new_version }}
+          git push origin ${{ steps.increment-patch-version.outputs.new_version }}
