@@ -1,0 +1,31 @@
+name: add renovate label
+run-name: ${{ github.ref_name }} by @${{ github.actor }} ${{ github.workflow }}
+on:
+  pull_request:
+    types:
+      - opened
+defaults:
+  run:
+    shell: bash
+jobs:
+  add-renovate-label:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    if: ${{ startsWith( github.head_ref , 'renovate') }}
+    steps:
+      - name: Check branch
+        run: echo "${{ github.head_ref }}"
+      - name: Generate token
+        id: generate-token
+        uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2.2.1
+        with:
+          app-id: ${{ secrets.BOT_GITHUB_APP_ID }}
+          private-key: ${{ secrets.BOT_GITHUB_APP_PRIVATE_KEY }}
+      - name: Add renovate label
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
+        run: |
+          gh pr edit "${PR_URL}" --add-label "renovate"
+          gh pr review --approve "${PR_URL}"
