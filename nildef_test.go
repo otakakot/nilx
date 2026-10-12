@@ -32,7 +32,7 @@ func TestNilDefInt16(t *testing.T) {
 	got := nilx.NilDef(nil, int16(1))
 
 	if !reflect.DeepEqual(got, int16(1)) {
-		t.Errorf("NilDef() = %v, want %v", got, int16(0))
+		t.Errorf("NilDef() = %v, want %v", got, int16(1))
 	}
 
 	val := int16(5)
